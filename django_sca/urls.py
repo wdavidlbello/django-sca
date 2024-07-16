@@ -1,3 +1,5 @@
+
+
 """
 URL configuration for django_sca project.
 
@@ -16,7 +18,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_sca import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('persons/',views.person_list),
+    path('persons/<int:id>',views.person_detail)
 ]
