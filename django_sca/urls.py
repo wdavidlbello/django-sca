@@ -22,6 +22,8 @@ from django_sca import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('persons/',views.person_list),
-    path('persons/<int:id>',views.person_detail)
+    path('persons/',views.persons_list),
+    path('persons/<int:id>',views.person_detail),
+    path('departments/',views.departments_list),
+    path('departments/<int:id>',views.department_detail)
 ]
