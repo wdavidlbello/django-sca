@@ -16,8 +16,8 @@ class Person(models.Model):
         return self.name
 
 class PersonDepart (models.Model):
-    personId = models.ForeignKey(Person,on_delete=models.CASCADE)
-    departments = models.ManyToManyField(Department)
+    person = models.ForeignKey(Person,related_name='persons',on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,related_name='departments',on_delete=models.CASCADE)
 
 class Log(models.Model):
     person = models.ForeignKey(Person,on_delete=models.CASCADE)
